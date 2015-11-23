@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+ERP-ISI-2015-2016
+
+  This file is part of ERP-ISI-2015-2016.
+
+    ERP-ISI-2015-2016 is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    ERP-ISI-2015-2016 is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with ERP-ISI-2015-2016.  If not, see <http://www.gnu.org/licenses/>.
+
+ @license     http://www.gnu.org/licenses/gpl.txt
+ @source code https://github.com/jmcolmenar/erp-isi-2015-2016
+-->
+<html>
+    <head>
+        <title>ERP - ISI 2015-2016 (URJC)</title>
+        <meta charset="ISO-8859-15">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    </head>
+    <body>
+        <script>
+            
+            $(document).ready(function() {
+
+    $('#login-form').submit(function(event) {
+
+        var formData = {
+            'user'             : $('input[name=user]').val(),
+            'pass'             : $('input[name=pass]').val()
+        };
+
+        // process the form
+        $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : 'common/login.php', // the url where we want to POST
+            data        : formData, // our data object
+            dataType    : 'json' // what type of data do we expect back from the server
+        })
+            // using the done promise callback
+            .done(function(data) {
+                if (!data.success) {
+                    process_login_result(data);
+                } else {
+                    alert("Error");
+                }
+            })
+                                
+            .fail(function(data) {
+                alert("Fail!!")
+            });
+                                
+           // stop the form from submitting the normal way and refreshing the page
+                    event.preventDefault();
+                });
+
+            });    // Document ready
+
+
+            function process_login_result(data) {
+
+                // Include response into container div:
+                $("#main-menu").contents().remove("*");
+                for (var v in data) {
+                    $("#main-menu").append(data[v]);
+                }
+
+            }
+            
+        </script>
+        <div id="main">
+            <form id="login-form" method="POST">
+                <input id="user" name="user" type="text" size="20"/>
+                <input id="pass" name="pass" type="password" size="20"/>
+                <input type="submit" value="Enviar">
+            </form>
+            <div id="main-menu"></div>
+        </div>
+    </body>
+</html>
