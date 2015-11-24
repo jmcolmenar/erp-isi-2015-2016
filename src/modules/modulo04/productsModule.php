@@ -3,7 +3,7 @@
 /**
  * Description of productsModule
  *
- * @author jvicentem
+ * @author jvicentem sergiobanegas
  */
 
 $action = $_GET["action"];
