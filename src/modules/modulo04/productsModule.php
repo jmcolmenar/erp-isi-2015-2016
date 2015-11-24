@@ -7,7 +7,7 @@
  */
 
 $action = $_GET["action"];
-$service = new ErpUrjcService();
+$service = new ProductsService(new ProductsSqliteUtils("products.db"));
 $jTableResult = array();
 
 switch ($action) {

@@ -7,7 +7,7 @@
  */
 
 
-class ErpUrjcService {
+class ProductsService {
     private $externalDataProvider;
     
     function __construct(ExternalSourceInterface $externalSource){

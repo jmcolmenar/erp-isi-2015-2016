@@ -6,7 +6,7 @@ use SQLite3;
  *
  * @author jvicentem
  */
-class SqliteUtils extends SQLite3 implements externalSourceInterface {
+class ProductsSqliteUtils extends SQLite3 implements ProductsExternalSourceInterface {
     const TABLE_NAME = 'productos';
     const PRODUCT_NAME_FIELD = 'nombre';
     const PRODUCT_PRICE_FIELD = 'precio';
