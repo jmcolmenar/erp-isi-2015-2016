@@ -22,7 +22,7 @@ ERP-ISI-2015-2016
 -->
 <html>
     <head>
-        <title>Modulo 07 Gestion de pedidos</title>
+        <h1>Modulo 07    Gestion de pedidos</h1>
         <meta charset="ISO-8859-15">
         <meta name="viewport" content="width=device-width">
     </head>
