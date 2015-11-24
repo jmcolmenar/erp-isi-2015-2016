@@ -1,38 +1,40 @@
 <?php
 
-use SQLite3;
 
 /**
  *
  * @author jvicentem
  */
+
+include_once("ProductsExternalSourceInterface.php");
+
 class ProductsSqliteUtils extends SQLite3 implements ProductsExternalSourceInterface {
     const TABLE_NAME = 'productos';
     const PRODUCT_NAME_FIELD = 'nombre';
     const PRODUCT_PRICE_FIELD = 'precio';
     const PRODUCT_ID_FIELD = 'IDP';
 
-    public function __construct($name) {
-        parent::__construct($name);
+    public function __construct() {
+        $this->open("products.db");
     }
     
     private function getTableName(){
-        return SqliteUtils::TABLE_NAME;
+        return ProductsSqliteUtils::TABLE_NAME;
     }
     
     private function getProductNameField(){
-        return SqliteUtils::PRODUCT_NAME_FIELDE;
+        return ProductsSqliteUtils::PRODUCT_NAME_FIELD;
     }
     
     private function getProductPriceField(){
-        return SqliteUtils::PRODUCT_PRICE_FIELD;
+        return ProductsSqliteUtils::PRODUCT_PRICE_FIELD;
     }
     
     private function getProductIdField(){
-        return SqliteUtils::PRODUCT_ID_FIELD;
+        return ProductsSqliteUtils::PRODUCT_ID_FIELD;
     }
     
-    private function query_to_array($query) {
+    public function query_to_array($query) {
         $results = $this->query($query);
         
         //Add all records to an array
@@ -48,11 +50,11 @@ class ProductsSqliteUtils extends SQLite3 implements ProductsExternalSourceInter
     }
     
     public function insertProduct($name,$price) {
-        return $this->exec("INSERT INTO {$this->getTableName()}({$this->getProductNameField()},{$this->getTableName()}({$this->getProductPriceField()}) VALUES (\'$name\',\'$price\')");
+        return $this->exec("INSERT INTO {$this->getTableName()}({$this->getProductNameField()},{$this->getProductPriceField()}) VALUES ('$name','$price')");
     }
     
     public function updateProduct($idp,$name,$price) {
-        return $this->exec("UPDATE {$this->getTableName()} SET {$this->getProductNameField()}=\'$name\', {$this->getProductPriceField()}=\'$price\' where {$this->getProductIdField()}=\'$idp\'");
+        return $this->exec("UPDATE {$this->getTableName()} SET {$this->getProductNameField()}='$name', {$this->getProductPriceField()}='$price' where {$this->getProductIdField()}='$idp'");
     }
     
     public function deleteProduct($idp) {

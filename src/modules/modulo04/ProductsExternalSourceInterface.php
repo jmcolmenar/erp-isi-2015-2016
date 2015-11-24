@@ -10,12 +10,12 @@
  *
  * @author jvicentem
  */
-interface ExternalSourceInterface {
+interface ProductsExternalSourceInterface {
     public function fetchProducts();
     
-    public function insertProduct();
+    public function insertProduct($name,$price);
     
-    public function updateProduct();
+    public function updateProduct($idp,$name,$price);
     
-    public function deleteProduct();
+    public function deleteProduct($idp);
 }

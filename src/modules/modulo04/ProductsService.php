@@ -10,27 +10,27 @@
 class ProductsService {
     private $externalDataProvider;
     
-    function __construct(ExternalSourceInterface $externalSource){
+    function __construct(ProductsExternalSourceInterface $externalSource){
         $this->externalDataProvider = $externalSource; 
     }
     
-    public function getExternalDataProvider() {
+    private function getExternalDataProvider() {
         return $this->externalDataProvider;
     }
     
     public function productsList() {
-        $this->getExternalDataProvider()->fetchProducts();
+        return $this->getExternalDataProvider()->fetchProducts();
     }
     
     public function addProduct($name,$price) {
-        $this->getExternalDataProvider()->insertProduct($name,$price);
+        return $this->getExternalDataProvider()->insertProduct($name,$price);
     }
     
     public function modifyProduct($idp,$name,$price) {
-        $this->getExternalDataProvider()->updateProduct($idp,$name,$price);
+        return $this->getExternalDataProvider()->updateProduct($idp,$name,$price);
     }
     
     public function removeProduct($idp) {
-        $this->getExternalDataProvider()->deleteProduct($idp);
+        return $this->getExternalDataProvider()->deleteProduct($idp);
     }
 }
