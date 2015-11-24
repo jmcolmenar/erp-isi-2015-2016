@@ -8,5 +8,7 @@ Los usuarios del ERP serán gestionados por un módulo al que sólo tiene acceso
  3. Edición y borrado de usuarios.
  4. Los usuarios estarán siempre vinculados a empleados. No puede haber usuario sin empleado.
 
- ### Actualmente desarrollando este módulo:
-  * Víctor Muñoz Reyes
+## Actualmente desarrollado por:
+
+[https://github.com/vmunozre](https://github.com/vmunozre "vmunozre") Victor Muñoz Reyes
+
