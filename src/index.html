@@ -29,7 +29,7 @@ ERP-ISI-2015-2016
     </head>
     <body>
         <script>
-            
+     
             $(document).ready(function() {
 
     $('#login-form').submit(function(event) {
@@ -60,29 +60,32 @@ ERP-ISI-2015-2016
             });
                                 
            // stop the form from submitting the normal way and refreshing the page
-                    event.preventDefault();
-                });
-
-            });    // Document ready
+                        event.preventDefault();
+                    });
 
 
-            function process_login_result(data) {
+                });    // Document ready
 
-                // Include response into container div:
-                $("#main-menu").contents().remove("*");
-                for (var v in data) {
-                    $("#main-menu").append(data[v]);
+
+                function process_login_result(data) {
+
+                    // Include response into container div:
+                    $("#main-menu").contents().remove("*");
+                    for (var v in data) {
+                        $("#main-menu").append(data[v]);
+                    }
+
                 }
 
-            }
-            
         </script>
         <div id="main">
-            <form id="login-form" method="POST">
-                <input id="user" name="user" type="text" size="20"/>
-                <input id="pass" name="pass" type="password" size="20"/>
-                <input type="submit" value="Enviar">
-            </form>
+            <div id="div-login-form">
+                <form id='login-form' method='POST'>
+                    <input id='user' name='user' type='text' size='20'/>
+                    <input id='pass' name='pass' type='password' size='20'/>
+                    <input type='submit' value='Enviar'>
+                </form>
+            </div>
             <div id="main-menu"></div>
         </div>
     </body>

@@ -22,32 +22,24 @@
  *  @source code https://github.com/jmcolmenar/erp-isi-2015-2016
  */
 
-include_once 'functions.inc';
-include_once '../database/dbFunctions.inc';
+class DbAccess extends SQLite3 {
 
-/*
- * 1.- Comprobar que usuario y pass están en la BD.
- * 1.1.- Activar la sesión y guardar en ella info de seguridad.
- * 2.- Recabar el listado de módulos a los que se tiene acceso.
- * 3.- Codificarlos y enviarlos.
- */
 
-if (isset($_POST["user"]) && isset($_POST["pass"])) {
+    function __construct() {
+        // Still not implemented.
+//        $this->open('data.db');
+    }
 
-    $usu = filter_input(INPUT_GET, $_POST["user"]);
-    $pass = filter_input(INPUT_GET, $_POST["pass"]);
-    
-    if (check_login($usu, $pass)) {
-        
-        // Dummy: siempre los mismos módulos.
-        $json_result = array();
-        $json_result["0"] = main_menu_element("Mod. Test 1","modules/testmod1/");
-        $json_result["1"] = main_menu_element("Mod. Test 2","modules/testmod2/");
-        print json_encode($json_result);
-        
-    } else {
-        print "Error: no check";
+    /**
+     * Checks if the user and pass are correct and are stored into the database.
+     * @param type $user
+     * @param type $pass
+     */
+    function isUser($user,$pass) {
+        // TODO: to be implemented
+        return true;
     }
     
 }
 
+?>
