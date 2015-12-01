@@ -7,7 +7,7 @@
  */
 
 include_once("ProductsService.php");
-include_once("ProductsSqliteUtils.php");
+include_once("../database/ProductsSqliteUtils.php");
 
 $action = filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING);
 
