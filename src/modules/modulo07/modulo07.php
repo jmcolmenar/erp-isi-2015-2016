@@ -50,7 +50,7 @@ ERP-ISI-2015-2016
                             list: false
                         },
                         campo1: {
-                            title: 'Cdigo',
+                            title: 'C&oacutedigo',
                             width: '10%'
                         },
                         campo2: {
