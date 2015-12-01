@@ -10,7 +10,12 @@
  * Description of nominas
  *
  * @author Naugh
+ * 
+ * nombre apellido codigo comercial? sueldo
  */
 class nominas {
-    //put your code here
+    //put your code here  
+    function dameEmpleados(){
+        $e1 = ["Pedro","Lopez",1,FALSE,1000.0];
+    }
 }
