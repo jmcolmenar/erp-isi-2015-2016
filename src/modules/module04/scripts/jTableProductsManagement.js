@@ -2,10 +2,10 @@ $(document).ready(function () {
     $('#ProductsTableContainer').jtable({
         title: 'Tabla de datos de los productos',
         actions: { /* Aquí relaciono el nombre de cada acción (la que hacen los boyones de editar, borrar, etc.) con el método que le corresponde en el backend */
-            listAction: 'productsModule.php?action=productsList',
-            createAction: 'productsModule.php?action=addProduct',
-            updateAction: 'productsModule.php?action=modifyProduct',
-            deleteAction: 'productsModule.php?action=removeProduct'
+            listAction: 'module.php?action=productsList',
+            createAction: 'module.php?action=addProduct',
+            updateAction: 'module.php?action=modifyProduct',
+            deleteAction: 'module.php?action=removeProduct'
         },
         fields: { // Con esto se crean las columnas de la tabla
             IDP: { // IDP es el nombre de un campo del JSON

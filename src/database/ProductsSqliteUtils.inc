@@ -6,36 +6,37 @@
  * @author jvicentem
  */
 
-include_once("../modules/modulo04/ProductsExternalSourceInterface.inc");
-
-class ProductsSqliteUtils extends SQLite3 implements ProductsExternalSourceInterface {
+class ProductsSqliteUtils extends SQLite3 {
     const TABLE_NAME = 'productos';
     const PRODUCT_NAME_FIELD = 'nombre';
     const PRODUCT_PRICE_FIELD = 'precio';
     const PRODUCT_ID_FIELD = 'IDP';
 
-    public function __construct() {
-        $this->open("products.db");
+    private static $connection;
+    
+    static function init() {
+        $db = new SQLite3('../../database/products.db');
+        self::$connection = $db;
     }
     
-    private function getTableName(){
+    static function getTableName(){
         return ProductsSqliteUtils::TABLE_NAME;
     }
     
-    private function getProductNameField(){
+    static function getProductNameField(){
         return ProductsSqliteUtils::PRODUCT_NAME_FIELD;
     }
     
-    private function getProductPriceField(){
+    static function getProductPriceField(){
         return ProductsSqliteUtils::PRODUCT_PRICE_FIELD;
     }
     
-    private function getProductIdField(){
+    static function getProductIdField(){
         return ProductsSqliteUtils::PRODUCT_ID_FIELD;
     }
     
-    public function query_to_array($query) {
-        $results = $this->query($query);
+    static function query_to_array($query) {
+        $results = ProductsSqliteUtils::$connection->query($query);
         
         //Add all records to an array
         $rows = array();
@@ -45,20 +46,30 @@ class ProductsSqliteUtils extends SQLite3 implements ProductsExternalSourceInter
         return $rows;
     }
     
-    public function fetchProducts() {
-        return $this->query_to_array("SELECT * FROM {$this->getTableName()}");
+    public static function fetchProducts() {
+        $table_name = ProductsSqliteUtils::getTableName();
+        return ProductsSqliteUtils::query_to_array("SELECT * FROM {$table_name}");
     }
     
-    public function insertProduct($name,$price) {
-        return $this->exec("INSERT INTO {$this->getTableName()}({$this->getProductNameField()},{$this->getProductPriceField()}) VALUES ('$name','$price')");
+    public static function insertProduct($name,$price) {
+        $table_name = ProductsSqliteUtils::getTableName();
+        $name_field = ProductsSqliteUtils::getProductNameField();
+        $product_field = ProductsSqliteUtils::getProductPriceField();
+        return ProductsSqliteUtils::$connection->exec("INSERT INTO {$table_name}({$name_field},{$product_field}) VALUES ('$name','$price')");
     }
     
-    public function updateProduct($idp,$name,$price) {
-        return $this->exec("UPDATE {$this->getTableName()} SET {$this->getProductNameField()}='$name', {$this->getProductPriceField()}='$price' where {$this->getProductIdField()}='$idp'");
+    public static function updateProduct($idp,$name,$price) {
+        $table_name = ProductsSqliteUtils::getTableName();
+        $name_field = ProductsSqliteUtils::getProductNameField();
+        $product_field = ProductsSqliteUtils::getProductPriceField();
+        $id_field = ProductsSqliteUtils::getProductIdField();
+        return ProductsSqliteUtils::$connection->exec("UPDATE {$table_name} SET {$name_field}='$name', {$product_field}='$price' where {$id_field}='$idp'");
     }
     
-    public function deleteProduct($idp) {
-        return $this->exec("delete from {$this->getTableName()} where {$this->getProductIdField()}={$idp}" );
+    public static function deleteProduct($idp) {
+        $table_name = ProductsSqliteUtils::getTableName();
+        $id_field = ProductsSqliteUtils::getProductIdField();
+        return ProductsSqliteUtils::$connection->exec("delete from {$table_name} where {$id_field}={$idp}" );
     }
     
 }
