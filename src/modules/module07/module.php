@@ -29,7 +29,8 @@ ERP-ISI-2015-2016
 
         <link href="themes/redmond/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
         <link href="scripts/jtable/themes/metro/lightgray/jtable.css" rel="stylesheet" type="text/css" />
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" /> 
+        <!--<link href="src/common/main.css" rel="stylesheet" type="text/css" />-->
 
         <script src="scripts/jquery-1.6.4.min.js" type="text/javascript"></script>
         <script src="scripts/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
@@ -40,7 +41,7 @@ ERP-ISI-2015-2016
                 $('#PersonTableContainer').jtable({
                     title: 'Tabla de pedidos',
                     actions: {
-                        listAction: 'backend.php',
+                        listAction: 'src/modules/module07/backend.php?action=listar',
                         createAction: 'backend.php?action=nuevo',
                         updateAction: 'backend.php?action=actualizar',
                         deleteAction: 'backend.php?action=borrar'

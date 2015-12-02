@@ -25,7 +25,7 @@ ERP-ISI-2015-2016
 class TestBD extends SQLite3
 {
     function __construct() {
-        $this->open('testBD.db');
+        $this->open('src/modules/module07/testBD.db');
     }
     
     function query_to_array($query) {

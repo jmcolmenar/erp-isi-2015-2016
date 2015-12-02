@@ -22,7 +22,7 @@ ERP-ISI-2015-2016
 <?php
 $action = $_GET["action"];
 
-include_once("testBD.php");
+include_once("src/modules/module07/testBD.php");
 $bd = new TestBD();
 
 $jTableResult = array();
