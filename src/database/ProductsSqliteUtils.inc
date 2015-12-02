@@ -6,7 +6,7 @@
  * @author jvicentem
  */
 
-include_once("ProductsExternalSourceInterface.php");
+include_once("../modules/modulo04/ProductsExternalSourceInterface.inc");
 
 class ProductsSqliteUtils extends SQLite3 implements ProductsExternalSourceInterface {
     const TABLE_NAME = 'productos';

@@ -6,8 +6,8 @@
  * @author jvicentem sergiobanegas
  */
 
-include_once("ProductsService.php");
-include_once("../database/ProductsSqliteUtils.php");
+include_once("ProductsService.inc");
+include_once("../database/ProductsSqliteUtils.inc");
 
 $action = filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING);
 
