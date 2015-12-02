@@ -13,13 +13,15 @@
  * 
  * nombre apellido codigo comercial? sueldo
  */
-class nominas {
-    //put your code here  
-    function dameEmpleados(){
-        $e1 = ["Pedro","Lopez",1,FALSE,1000.0];
-        $e2 = ["Jonny","Mentero",2,TRUE,1200.0];
-        $e3 = ["Armando","Casas",1,FALSE,1050.0];
-        $e4 = ["Sole","Dolio",1,FALSE,1000.0];
-        $e5 = ["Encarna","Vales",1,TRUE,1150.0];
-    }
+//put your code here  
+$empleados = array();
+function dameEmpleados() {
+    $e1 = ["Pedro", "Lopez", 1, FALSE, 1000.0];
+    $e2 = ["Jonny", "Mentero", 2, TRUE, 1200.0];
+    $e3 = ["Armando", "Casas", 1, FALSE, 1050.0];
+    $e4 = ["Sole", "Dolio", 1, FALSE, 1000.0];
+    $e5 = ["Encarna", "Vales", 1, TRUE, 1150.0];
+    $empleados=[$e1,$e2,$e3,$e4,$e5];
 }
+
+print json_encode($empleados);
