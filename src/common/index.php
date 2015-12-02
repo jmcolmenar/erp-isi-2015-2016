@@ -45,6 +45,6 @@ ERP-ISI-2015-2016
         
         ?>
         </div>
-        <footer><p>Curso 2015-2016 - Ingenier&iactue;a de Sistemas de Informaci&oacute;n - Universidad Rey Juan Carlos</p></footer>
+        <footer><p>Curso 2015-2016 - Ingenier&iacute;a de Sistemas de Informaci&oacute;n - Universidad Rey Juan Carlos</p></footer>
     </body>
 </html>

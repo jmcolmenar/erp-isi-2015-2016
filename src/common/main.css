@@ -36,3 +36,14 @@ footer p {
     padding-top: 10px;
     text-align: center;
 }
+
+#div-login-form {
+    width: 25%;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #222222;
+}
+
+#div-login-form input {
+    margin-bottom: 20px;
+}
