@@ -22,11 +22,13 @@ ERP-ISI-2015-2016
 <?php
 $action = $_GET["action"];
 
-include_once("src/modules/modulo07/testBD.php");
+include_once("testBD.php");
 $bd = new TestBD();
 
 $jTableResult = array();
-
+        $jTableResult['Result'] = "OK";
+        $jTableResult['Records'] = $rows;
+        
 switch ($action) {
     case "listar":
         $rows = $bd->lista_tabla_usuarios_completa();
