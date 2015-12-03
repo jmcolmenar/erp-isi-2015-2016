@@ -25,7 +25,7 @@
 class basededatos extends SQLite3
 {
     function __construct() {
-        $this->open('src/modules/modulo07/basededatos.db');
+        $this->open('basededatos.db');
     }
     
     function query_to_array($query) {

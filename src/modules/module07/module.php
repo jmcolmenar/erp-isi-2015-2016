@@ -42,10 +42,6 @@ ERP-ISI-2015-2016
                     title: 'Tabla de pedidos',
                     actions: {
                         listAction: 'backend.php?action=listar',
-                        createAction: 'backend.php?action=nuevo',
-                        updateAction: 'backend.php?action=actualizar',
-                        deleteAction: 'backend.php?action=borrar'
-                    },
                     /*
                      fields: {
                      IDU: {
