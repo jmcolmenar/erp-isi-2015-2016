@@ -9,12 +9,18 @@
 include_once('../../database/dbFunctions.inc');
 
 $action = filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING);
+$jtSorting = filter_input(INPUT_GET, "jtSorting", FILTER_SANITIZE_STRING);
 
 $jTableResult = array();
 
 switch ($action) {
     case "productsList":
-        $rows = productsList();
+        if (!empty($jtSorting)) {
+            $rows = productsListOrderBy($jtSorting);
+        } else {
+            $rows = productsList();
+        }
+        
         $jTableResult['Result'] = "OK";
         $jTableResult['Records'] = $rows;
         

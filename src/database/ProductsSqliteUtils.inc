@@ -46,6 +46,11 @@ class ProductsSqliteUtils extends SQLite3 {
         return $rows;
     }
     
+    public static function fetchProductsOrderedBy($sortRule) {
+        $table_name = ProductsSqliteUtils::getTableName();
+        return ProductsSqliteUtils::query_to_array("SELECT * FROM {$table_name} ORDER BY {$sortRule}");
+    }
+    
     public static function fetchProducts() {
         $table_name = ProductsSqliteUtils::getTableName();
         return ProductsSqliteUtils::query_to_array("SELECT * FROM {$table_name}");
