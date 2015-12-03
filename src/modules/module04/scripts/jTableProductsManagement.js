@@ -10,7 +10,9 @@ $(document).ready(function () {
         fields: { // Con esto se crean las columnas de la tabla
             IDP: { // IDP es el nombre de un campo del JSON
                 key: true, // key está a true por lo que quiere decir que este campo es la clave primaria
-                list: true // list está a true, por lo que quiere decir que este campo se va a mostrar en la tabla
+                list: true, // list está a true, por lo que quiere decir que este campo se va a mostrar en la tabla
+                title: 'Id',
+                width: '10%'
             },
             nombre: { // nombre es el nombre de un campo del JSON
                 title: 'Nombre', //Nombre es el nombre de la columna que alberga el contenido del campo de la BBDD nombre
