@@ -23,6 +23,9 @@
  */
 
 include_once 'dbAccess.inc';
+include_once 'ProductsSqliteUtils.inc';
+
+ProductsSqliteUtils::init();
 
 function check_login($user, $pass) {
     $db = new DbAccess();
@@ -32,4 +35,20 @@ function check_login($user, $pass) {
     } else {
         return false;
     }
+}
+
+function productsList() {
+    return ProductsSqliteUtils::fetchProducts();
+}
+
+function addProduct($name,$price) {
+    return ProductsSqliteUtils::insertProduct($name,$price);
+}
+
+function modifyProduct($idp,$name,$price) {
+    return ProductsSqliteUtils::updateProduct($idp,$name,$price);
+}
+
+function removeProduct($idp) {
+    return ProductsSqliteUtils::deleteProduct($idp);
 }
