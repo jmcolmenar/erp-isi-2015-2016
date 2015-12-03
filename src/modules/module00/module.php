@@ -22,31 +22,4 @@
  *  @source code https://github.com/jmcolmenar/erp-isi-2015-2016
  */
 
-/**
- * Returns the HTML code that represents an element of the main module menu.
- * @param String $str Description of the element
- * @param String $url Link to the module
- */
-function main_menu_element($str,$url) {
-    $res = '<div class="main_menu_element"><p><a href="'.$url.'">'.
-            $str.'</a></p></div>';
- 
-    return $res;
-}
-
-function isLogged() {
-    session_start();
-    return isset($_SESSION['erp']);
-}
-
-function loginERP() {
-    // Activa la sesión
-    session_start();
-    $_SESSION['erp'] = "On";       
-}
-
-function logoutERP() {
-    // Activa la sesión
-    session_start();
-    unset($_SESSION['erp']);
-}
+echo "<p>M&oacute;dulo de test</p>";
