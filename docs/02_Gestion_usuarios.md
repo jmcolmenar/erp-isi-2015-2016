@@ -11,4 +11,3 @@ Los usuarios del ERP serán gestionados por un módulo al que sólo tiene acceso
 ## Actualmente desarrollado por:
 
 [https://github.com/vmunozre](https://github.com/vmunozre "vmunozre") Victor Muñoz Reyes
-

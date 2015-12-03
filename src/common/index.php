@@ -1,3 +1,12 @@
+<?php
+        include_once 'functions.inc';
+        
+        if (!isLogged()) {
+            header('Location: /src/index.html');
+            die();
+        }
+?>
+
 <!DOCTYPE html>
 <!--
 ERP-ISI-2015-2016
@@ -28,23 +37,29 @@ ERP-ISI-2015-2016
         <link href="main.css" rel="stylesheet" type="text/css"/>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     </head>
-    <body>
-        <header><a href='index.php'>Inicio</a> - <a href='index.php?module=00'>M&oacute;dulo Test</a></header>
+    <body>       
+        <header>
+            <ul>
+                <li><a href='index.php'>Inicio</a></li>
+                <li><a href='index.php?module=00'>M&oacute;dulo Test</a></li>
+                <li><a href='login.php?logout=true'>Logout</a></li>
+            </ul>
+        </header>
         <div id="main-content">
-        <?php
+    <?php
         
-        if (isset($_GET['module'])) {
-            $module = $_GET['module'];
-        }
+            if (isset($_GET['module'])) {
+                $module = $_GET['module'];
+            }
+
+            if (isset($module)) {
+                include '../modules/module' . $module . '/module.php';
+            } else {
+                echo '<p>P&aacute;gina INICIAL por defecto</p>';
+            }
         
-        if (isset($module)) {
-            include '../modules/module'.$module.'/module.php';
-        } else {
-            echo '<p>P&aacute;gina INICIAL por defecto</p>';
-        }
-        
-        ?>
+    ?>
         </div>
-        <footer><p>Curso 2015-2016 - Ingenier&iactue;a de Sistemas de Informaci&oacute;n - Universidad Rey Juan Carlos</p></footer>
+        <footer><p>Curso 2015-2016 - Ingenier&iacute;a de Sistemas de Informaci&oacute;n - Universidad Rey Juan Carlos</p></footer>
     </body>
 </html>
