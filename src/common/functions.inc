@@ -33,3 +33,20 @@ function main_menu_element($str,$url) {
  
     return $res;
 }
+
+function isLogged() {
+    session_start();
+    return isset($_SESSION['erp']);
+}
+
+function loginERP() {
+    // Activa la sesión
+    session_start();
+    $_SESSION['erp'] = "On";       
+}
+
+function logoutERP() {
+    // Activa la sesión
+    session_start();
+    unset($_SESSION['erp']);
+}
