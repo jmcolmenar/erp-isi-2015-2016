@@ -37,6 +37,10 @@ function check_login($user, $pass) {
     }
 }
 
+function productsListOrderBy($sortRule) {
+    return ProductsSqliteUtils::fetchProductsOrderedBy($sortRule);
+}
+
 function productsList() {
     return ProductsSqliteUtils::fetchProducts();
 }
