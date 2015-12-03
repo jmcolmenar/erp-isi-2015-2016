@@ -41,7 +41,7 @@ ERP-ISI-2015-2016
                 $('#PersonTableContainer').jtable({
                     title: 'Tabla de pedidos',
                     actions: {
-                        listAction: 'backend.php?action=listar',
+                        listAction: 'backend.php?action=listar',},
                     /*
                      fields: {
                      IDU: {
