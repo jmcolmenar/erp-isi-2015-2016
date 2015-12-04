@@ -8,7 +8,7 @@
 
 $action = $_GET["action"];
 
-include_once("accessBD.php");
+include_once("../../database/accessBD.php");
 $bd = new AccessBD();
 
 $jTableResult = array();
@@ -22,7 +22,7 @@ switch ($action) {
         $jTableResult['Records'] = $rows;
         break;
     case "nuevo":
-        //$res = $bd->inserta_usuario("One","Uno");
+
         $res = $bd->inserta_usuario($_POST["usu"],$_POST["pass"]);
         $row = $bd->last_record_usuarios();
         //Return result to jTable
