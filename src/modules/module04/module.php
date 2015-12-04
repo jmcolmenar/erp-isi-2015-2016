@@ -6,7 +6,7 @@
  * @author jvicentem 
  */
 
-include_once('../../database/dbFunctions.inc');
+include_once('../database/dbFunctions.inc');
 
 $action = filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING);
 $jtSorting = filter_input(INPUT_GET, "jtSorting", FILTER_SANITIZE_STRING);

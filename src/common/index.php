@@ -42,6 +42,7 @@ ERP-ISI-2015-2016
             <ul>
                 <li><a href='index.php'>Inicio</a></li>
                 <li><a href='index.php?module=00'>M&oacute;dulo Test</a></li>
+                <li><a href='index.php?module=04'>Productos</a></li>
                 <li><a href='login.php?logout=true'>Logout</a></li>
             </ul>
         </header>
