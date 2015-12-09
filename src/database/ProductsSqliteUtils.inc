@@ -15,7 +15,7 @@ class ProductsSqliteUtils extends SQLite3 {
     private static $connection;
     
     static function init() {
-        $db = new SQLite3('../../database/products.db');
+        $db = new SQLite3($_SERVER['DOCUMENT_ROOT'].'/src/database/products.db');
         self::$connection = $db;
     }
     

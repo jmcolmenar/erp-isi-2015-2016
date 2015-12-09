@@ -8,7 +8,7 @@
 
 $action = $_GET["action"];
 
-include_once("../../database/accessBD.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/src/database/accessBD.php");
 $bd = new AccessBD();
 
 $jTableResult = array();

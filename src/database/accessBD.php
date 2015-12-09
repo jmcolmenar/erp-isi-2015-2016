@@ -9,7 +9,7 @@
 class AccessBD extends SQLite3
 {
     function __construct() {
-        $this->open('../../database/accessBD.db');
+        $this->open($_SERVER['DOCUMENT_ROOT'].'/src/database/accessBD.db');
     }
     
     function query_to_array($query) {
