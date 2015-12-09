@@ -26,6 +26,7 @@ ERP-ISI-2015-2016
         <meta charset="ISO-8859-15">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <link href="common/main.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <script>
@@ -68,25 +69,20 @@ ERP-ISI-2015-2016
 
 
                 function process_login_result(data) {
-
-                    // Include response into container div:
-                    $("#main-menu").contents().remove("*");
-                    for (var v in data) {
-                        $("#main-menu").append(data[v]);
-                    }
-
+                    // In a correct login, move to main file:
+                    window.location.replace("common/index.php");
                 }
 
         </script>
         <div id="main">
             <div id="div-login-form">
+                <h2>Formulario de entrada</h2>
                 <form id='login-form' method='POST'>
-                    <input id='user' name='user' type='text' size='20'/>
-                    <input id='pass' name='pass' type='password' size='20'/>
+                    <label>Usuario:</label> <input id='user' name='user' type='text' size='20'/><br>
+                    <label>Contrase&ntilde;a:</label> <input id='pass' name='pass' type='password' size='20'/><br>
                     <input type='submit' value='Enviar'>
                 </form>
             </div>
-            <div id="main-menu"></div>
         </div>
     </body>
 </html>

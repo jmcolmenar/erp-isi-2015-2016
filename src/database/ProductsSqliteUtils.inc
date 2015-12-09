@@ -15,7 +15,7 @@ class ProductsSqliteUtils extends SQLite3 {
     private static $connection;
     
     static function init() {
-        $db = new SQLite3('../../database/products.db');
+        $db = new SQLite3('products.db');
         self::$connection = $db;
     }
     
@@ -44,6 +44,11 @@ class ProductsSqliteUtils extends SQLite3 {
             $rows[] = $row;
         }
         return $rows;
+    }
+    
+    public static function fetchProductsOrderedBy($sortRule) {
+        $table_name = ProductsSqliteUtils::getTableName();
+        return ProductsSqliteUtils::query_to_array("SELECT * FROM {$table_name} ORDER BY {$sortRule}");
     }
     
     public static function fetchProducts() {
