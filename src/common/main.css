@@ -66,3 +66,37 @@ footer p {
 #div-login-form input {
     margin-bottom: 20px;
 }
+
+/* 
+    Module07
+*/
+
+
+#module07-outer-wrap {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    background: #333333;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+
+#module07-top {
+    z-index: 100;
+    position: relative;
+    
+}
+#moudle07-top .block-title {
+    margin: 0;
+    font-size: 1.875em;
+    line-height: 1.2em;
+    text-align: center;
+    white-space: nowrap;
+    color: #fff;
+}
+#module07-principal {
+    background: #fff;
+    text-align: center;
+}
