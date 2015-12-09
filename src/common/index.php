@@ -45,9 +45,6 @@ ERP-ISI-2015-2016
             <ul>
                 <li><a href='index.php'>Inicio</a></li>
                 <li><a href='index.php?module=00'>M&oacute;dulo Test</a></li>
-<<<<<<< HEAD
-                <li><a href='index.php?module=04'>Productos</a></li>
-=======
                 <li><a href='index.php?module=01'>M&oacute;dulo 1</a></li>
                 <li><a href='index.php?module=02'>M&oacute;dulo 2</a></li>
                 <li><a href='index.php?module=03'>M&oacute;dulo 3</a></li>
@@ -56,7 +53,6 @@ ERP-ISI-2015-2016
                 <li><a href='index.php?module=06'>M&oacute;dulo 6</a></li>
                 <li><a href='index.php?module=07'>M&oacute;dulo 7</a></li>
                 <li><a href='index.php?module=08'>M&oacute;dulo 8</a></li>
->>>>>>> upstream/master
                 <li><a href='login.php?logout=true'>Logout</a></li>
             </ul>
         </header>

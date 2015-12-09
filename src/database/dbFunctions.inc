@@ -21,9 +21,8 @@
  *  @license     http://www.gnu.org/licenses/gpl.txt
  *  @source code https://github.com/jmcolmenar/erp-isi-2015-2016
  */
-
-include_once 'dbAccess.inc';
-include_once 'ProductsSqliteUtils.inc';
+include_once(filter_input(INPUT_SERVER, 'DOCUMENT_ROOT', FILTER_SANITIZE_STRING).'/src/database/dbAccess.inc');
+include_once(filter_input(INPUT_SERVER, 'DOCUMENT_ROOT', FILTER_SANITIZE_STRING).'/src/database/ProductsSqliteUtils.inc');
 
 ProductsSqliteUtils::init();
 
