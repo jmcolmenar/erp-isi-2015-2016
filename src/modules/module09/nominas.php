@@ -39,7 +39,7 @@ $columnas = 5;
 $filas    = 5;
 
 print "<table border=\"1\">\n";            // Abre la tabla
-print "  <caption>Tabla</caption>\n";      // Crea la leyenda <caption>
+print "  <caption>Información nominas empleados</caption>\n";      // Crea la leyenda <caption>
 print "  <tbody>\n";                       // Abre el cuerpo de tabla <tbody>
 
 //print "    <tr>\n";                        // Abre la primera fila
@@ -47,12 +47,14 @@ print "  <tbody>\n";                       // Abre el cuerpo de tabla <tbody>
   
 //print "    </tr>\n";                       // Cierra la primera fila
 
-for ($i = 0; $i <= $filas; $i++) {         // Bucle 2 (genera el resto de filas de la tabla)
+for ($i = 0; $i < $filas; $i++) {         // Bucle 2 (genera el resto de filas de la tabla)
     print "    <tr>\n";                    // Abre la fila
     $aux = $empleados[$i];           // Crea la primera celda <th> de cada fila (con número)
-    for ($j = 0; $j <= $columnas; $j++) {  // Bucle 3 se ejecuta tantas veces como columnas tenga la tabla
-        print "      <td>$aux[$j]</td>\n";     // Crea el resto de celdas <td> de cada fila (con números)
+    for ($j = 0; $j < $columnas; $j++) {  // Bucle 3 se ejecuta tantas veces como columnas tenga la tabla
+        print "      <td>&nbsp; $aux[$j] &nbsp;</td>"; 
+        // Crea el resto de celdas <td> de cada fila (con números)
     } 
+    print " <td><a>&nbsp; Previsualizar/Editar nomina &nbsp;</a></td>\n";
     print "    </tr>\n";                   // Cierra la fila
 }
 
