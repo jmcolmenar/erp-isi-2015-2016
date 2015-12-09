@@ -8,3 +8,7 @@ Los empleados de la organización se gestionan en este apartado. De cada emplead
  2. Listado de empleados.
   1. Ordenación de empleados por los diferentes campos.
   2. Filtrado / búsqueda de empleados.
+
+Actualmente desarrollando este módulo:
+
+https://github.com/vicsmr (Victor Sanchez Muñoz, Fernando Lopez Nieto)

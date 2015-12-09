@@ -7,3 +7,7 @@ Un pedido es una lista de productos asociados a un cliente. Dispone de fecha y d
  2. Listado de pedidos.
   1. Ordenación de pedidos por los diferentes campos.
   2. Filtrado / búsqueda de pedidos.
+
+  ### Actualmente desarrollando este módulo:
+   * Luis Carlos Jiménez López
+   * Pablo García Benayas
