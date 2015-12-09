@@ -24,7 +24,6 @@
 
 class DbAccess extends SQLite3 {
 
-
     function __construct() {
         // Still not implemented.
 //        $this->open('data.db');

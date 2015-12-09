@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gesti&oacute;n de usuarios</title>
+        <meta charset="ISO-8859-15">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="themes/redmond/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+        <link href="../../common/Scripts/jtable/themes/lightcolor/blue/jtable.css" rel="stylesheet" type="text/css" />
+
+        <script src="../../common/scripts/jquery-1.6.4.min.js" type="text/javascript"></script>
+        <script src="../../common/scripts/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+        <script src="../../common/Scripts/jtable/jquery.jtable.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#UserTableContainer').jtable({
+                    title: 'Lista de Usuarios',
+                    actions: {
+                        listAction: 'module.php?action=listar',
+                        createAction: 'module.php?action=nuevo',
+                        updateAction: 'module.php?action=actualizar',
+                        deleteAction: 'module.php?action=borrar'
+                    },
+                    fields: {
+                        IDU: {
+                            key: true,
+                            list: false
+                        },
+                        usu: {
+                            title: 'Usuario',
+                            width: '60%',
+                            value: ''
+                        },
+                        pass: {
+                            title: 'Password',
+                            type: 'password',
+                            visibility: 'hidden',
+                            width: '40%',
+                            value: ''
+                        },
+                        perfil: {
+                            title: 'Perfil',
+                            width: '20%',
+                            options: { '1': 'Administrador', '2': 'Recursos Humanos', '3': 'Empleado' }
+                        },
+                        especial: {
+                            title: 'Especiales (separados por ";", ejemplo: Gestion Usuarios;...)',
+                            width: '40%',
+                            visibility: 'hidden',
+                            type: 'textarea'
+                        },
+                        empleado:{
+                            title: 'Empleado',
+
+                        }
+                    }
+
+                });
+                $('#UserTableContainer').jtable('load');
+            });
+        </script>
+    </head>
+    <body>
+        <!-- La base de datos usada es la dada en el taller 3 de Jtable. No contiene campos para los demas apartados, por lo tanto, cuando añades un usuario o editas uno no se modificará bien en la base de datos.  -->
+        <div id="menu"></div>
+        <h1>Gestion de Usuarios</h1>
+        <div id="UserTableContainer"></div>
+        <br>
+        <p>
+            <h3>Esquema permisos de los diferentes perfiles</h3>
+            <table border="1" width="100%">
+                <tr>
+                    <th>Administrador</th>
+                    <th>Recursos Humanos</th>
+                    <th>Empleado</th>
+                </tr>
+                <tr>
+                    <td>Todo</td>
+                    <td></td>
+                    <td>Entrada al Sistema</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Gestion de Empleado</td>
+                    <td>Catalogo de Productos</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Informes Comerciales</td>
+                    <td>Gestion de pedidos</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Nominas</td>
+                    <td>Informes comeriales</td>
+                </tr>
+            </table>
+
+
+        </p>
+    </body>
+</html>
