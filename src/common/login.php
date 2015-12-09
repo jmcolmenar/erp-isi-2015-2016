@@ -23,7 +23,7 @@
  */
 
 include_once 'functions.inc';
-include_once '../database/dbFunctions.inc';
+include_once $_SERVER['DOCUMENT_ROOT'].'/src/database/dbFunctions.inc';
 
 /*
  * 1.- Comprobar que usuario y pass están en la BD.
