@@ -85,12 +85,12 @@
                     Pedido: <input type="text" name="name" id="name" value="Buscar pedido"/>
                     <select id="cityId" name="cityId">
                         <option selected="selected" value="0">Todos</option>
-                        <option value="1">Proveedor1</option>
-                        <option value="2">Proveedor2</option>
-                        <option value="3">Proveedor3</option>
-                        <option value="4">Proveedor4</option>
+                        <option value="1">Lenovo</option>
+                        <option value="2">El corte ingles</option>
+                        <option value="3">Pccomponentes</option>
+                        <option value="4">Amazon</option>
                     </select>    
-                    <button type="submit" id="LoadRecordsButton">Load records</button>
+                    <button type="submit" id="LoadRecordsButton">Cargar resultados</button>
                 </form>
             </div>
             <br>
