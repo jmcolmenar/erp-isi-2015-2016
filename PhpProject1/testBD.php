@@ -30,7 +30,7 @@ class TestBD extends SQLite3
     
     
     function lista_tabla_usuarios_completa() {
-        //Get records from database
+        //Get records from databases
         return $this->query_to_array('SELECT * FROM empleado');
     }
     
