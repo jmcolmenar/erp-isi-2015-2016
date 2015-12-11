@@ -20,7 +20,8 @@
                         listAction: 'fer.php?action=listar',
                         createAction: 'fer.php?action=nuevo',
                         updateAction: 'fer.php?action=actualizar',
-                        deleteAction: 'fer.php?action=borrar'
+                        deleteAction: 'fer.php?action=borrar',                        
+                        orderAction: 'fer.php?action=ordenar'
                     },
                     fields: {
                         IDU: {
@@ -46,6 +47,10 @@
         </script>    
     </head>
     <body>
+        <form method="POST" action="fer.php?action=ordenar"> 
+        <strong>Palabra clave:</strong> <input type="text" name="T1" size="20"><br><br> 
+        <input type="submit" value="Buscar" name="nombre"> 
+        </form>
         <div id="PersonTableContainer"></div>
         <br>
     </body>
