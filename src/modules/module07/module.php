@@ -21,7 +21,7 @@
                     pageSize: 10, //Set page size (default: 10)
                     sorting: true, //Enable sorting
 
-                    defaultSorting: 'FECHA_PEDIDO DSC', //Set default sorting
+                    defaultSorting: 'ID DSC', //Set default sorting
 
                     actions: {
                         listAction: '../modules/module07/backend.php?action=listar',
@@ -43,7 +43,9 @@
                         },
                         FECHA_PEDIDO: {
                             title: 'Fecha',
-                            width: '14%'
+                            width: '14%',
+                            type: 'date',
+                            displayFormat: 'dd-mm-yy'
                         },
                         PROVEEDOR: {
                             title: 'Proveedor',
@@ -81,8 +83,8 @@
         </div>
         <div id="module07-principal" role="main"> 
             <div>
-                <form>
-                    Pedido: <input type="text" name="name" id="name" value="Buscar pedido"/>
+                <form method="get">
+                    Pedido: <input type="text" name="filtro" id="name" value="Buscar pedido"/>
                     <select id="cityId" name="cityId">
                         <option selected="selected" value="0">Todos</option>
                         <option value="1">Lenovo</option>
