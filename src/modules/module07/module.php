@@ -14,57 +14,59 @@
         <script src="scripts/jtable/jquery.jtable.js" type="text/javascript"></script>
 
         <script type="text/javascript">
-            $(document).ready(function () {
-                $('#PersonTableContainer').jtable({
-                    title: 'Tabla de pedidos',
+                    $(document).ready(function () {
+            $('#PersonTableContainer').jtable({
+            title: 'Tabla de pedidos',
                     paging: true, //Enable paging
                     pageSize: 10, //Set page size (default: 10)
                     sorting: true, //Enable sorting
 
-                    defaultSorting: 'FECHA_PEDIDO DSC', //Set default sorting
+                    defaultSorting: 'ID DSC', //Set default sorting
 
                     actions: {
-                        listAction: '../modules/module07/backend.php?action=listar',
-                        createAction: '../modules/module07/backend.php?action=nuevo',
-                        updateAction: '../modules/module07/backend.php?action=actualizar',
-                        deleteAction: '../modules/module07/backend.php?action=borrar'
+                    listAction: '../modules/module07/backend.php?action=listar',
+                            createAction: '../modules/module07/backend.php?action=nuevo',
+                            updateAction: '../modules/module07/backend.php?action=actualizar',
+                            deleteAction: '../modules/module07/backend.php?action=borrar'
 
                     },
                     fields: {
-                        ID: {
-                            key: true,
+                    ID: {
+                    key: true,
                             list: false,
                             title: 'Id',
                             width: '14%'
-                        },
-                        NUMERO_PEDIDO: {
+                    },
+                            NUMERO_PEDIDO: {
                             title: 'Numero',
-                            width: '14%'
-                        },
-                        FECHA_PEDIDO: {
+                                    width: '14%'
+                            },
+                            FECHA_PEDIDO: {
                             title: 'Fecha',
-                            width: '14%'
-                        },
-                        PROVEEDOR: {
+                                    width: '14%',
+                                    displayFormat: 'yy-mm-dd'
+
+                            },
+                            PROVEEDOR: {
                             title: 'Proveedor',
-                            width: '14%'
-                        },
-                        CLIENTE: {
+                                    width: '14%'
+                            },
+                            CLIENTE: {
                             title: 'Cliente',
-                            width: '14%'
-                        },
-                        IMPORTE: {
+                                    width: '14%'
+                            },
+                            IMPORTE: {
                             title: 'Importe',
-                            width: '14%'
-                        },
-                        DTO: {
+                                    width: '14%'
+                            },
+                            DTO: {
                             title: 'Dto',
-                            width: '14%'
-                        }
+                                    width: '14%'
+                            }
 
                     }
-                });
-                $('#PersonTableContainer').jtable('load');
+            });
+                    $('#PersonTableContainer').jtable('load');
             });
         </script>    
     </head>
