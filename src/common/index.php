@@ -40,7 +40,7 @@ ERP-ISI-2015-2016
     <body>       
         <header>
             <?php
-            // Hardcoded header: debería procesar una lista de módulos accesibles.
+            // Hardcoded header: deberï¿½a procesar una lista de mï¿½dulos accesibles.
             ?>
             <ul>
                 <li><a href='index.php'>Inicio</a></li>
@@ -53,6 +53,7 @@ ERP-ISI-2015-2016
                 <li><a href='index.php?module=06'>M&oacute;dulo 6</a></li>
                 <li><a href='index.php?module=07'>M&oacute;dulo 7</a></li>
                 <li><a href='index.php?module=08'>M&oacute;dulo 8</a></li>
+                <li><a href='index.php?module=09'>M&oacute;dulo 9</a></li>
                 <li><a href='login.php?logout=true'>Logout</a></li>
             </ul>
         </header>
