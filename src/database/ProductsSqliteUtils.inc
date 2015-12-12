@@ -19,23 +19,23 @@ class ProductsSqliteUtils extends SQLite3 {
         self::$connection = $db;
     }
     
-    static function getTableName(){
+    private static function getTableName(){
         return ProductsSqliteUtils::TABLE_NAME;
     }
     
-    static function getProductNameField(){
+    private static function getProductNameField(){
         return ProductsSqliteUtils::PRODUCT_NAME_FIELD;
     }
     
-    static function getProductPriceField(){
+    private static function getProductPriceField(){
         return ProductsSqliteUtils::PRODUCT_PRICE_FIELD;
     }
     
-    static function getProductIdField(){
+    private static function getProductIdField(){
         return ProductsSqliteUtils::PRODUCT_ID_FIELD;
     }
     
-    static function query_to_array($query) {
+    private static function query_to_array($query) {
         $results = ProductsSqliteUtils::$connection->query($query);
         
         //Add all records to an array

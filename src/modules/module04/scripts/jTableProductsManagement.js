@@ -44,7 +44,7 @@ $(document).ready(function () {
                 width: '60%'
             },
             precio: { // precio es el nombre de un campo del JSON
-                title: 'Precio', //Precio es el nombre de la columna que alberga el contenido del campo de la BBDD precio
+                title: 'Precio (€)', //Precio es el nombre de la columna que alberga el contenido del campo de la BBDD precio
                 width: '20%'
             }
        }
