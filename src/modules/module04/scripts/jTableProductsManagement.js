@@ -27,10 +27,10 @@ $(document).ready(function () {
         },
         title: 'Productos',
         actions: { /* Aquí relaciono el nombre de cada acción (la que hacen los boyones de editar, borrar, etc.) con el método que le corresponde en el backend */
-            listAction: 'module.php?action=productsList',
-            createAction: 'module.php?action=addProduct',
-            updateAction: 'module.php?action=modifyProduct',
-            deleteAction: 'module.php?action=removeProduct'
+            listAction: '../modules/module04/products.php?action=productsList',
+            createAction: '../modules/module04/products.php?action=addProduct',
+            updateAction: '../modules/module04/products.php?action=modifyProduct',
+            deleteAction: '../modules/module04/products.php?action=removeProduct'
         },
         fields: { // Con esto se crean las columnas de la tabla
             IDP: { // IDP es el nombre de un campo del JSON
@@ -44,7 +44,7 @@ $(document).ready(function () {
                 width: '60%'
             },
             precio: { // precio es el nombre de un campo del JSON
-                title: 'Precio', //Precio es el nombre de la columna que alberga el contenido del campo de la BBDD precio
+                title: 'Precio (€)', //Precio es el nombre de la columna que alberga el contenido del campo de la BBDD precio
                 width: '20%'
             }
        }
