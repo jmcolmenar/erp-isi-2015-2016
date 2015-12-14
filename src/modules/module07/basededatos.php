@@ -45,6 +45,9 @@ class TestBD extends SQLite3
     function delete_pedido($ID) {
         return $this->exec('delete from PEDIDOS where ID='.$ID);
     }
+    function seleccion_proveedores($ID){
+        return $this->exec('SELECT * FROM PEDIDOS WHERE ID='.$ID);
+    }
 }
 
 ?>

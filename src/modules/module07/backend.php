@@ -43,6 +43,14 @@ switch ($action) {
             $jTableResult['Result'] = "ERROR";
         }        
         break;
+    case "proveedores":
+        $res = $bd->seleccion_proveedores($_POST["ID"]);
+        if ($res) {
+            $jTableResult['Result'] = "OK";
+        } else {
+            $jTableResult['Result'] = "ERROR";
+        }
+        break;
 }
 
 print json_encode($jTableResult);
